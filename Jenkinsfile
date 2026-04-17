@@ -1,9 +1,5 @@
 pipeline {
   agent any
-  tools {
-        maven 'Maven-3.9.9'
-        jdk 'JDK-17'
-    }
   environment {
     DOCKER_IMAGE = 'mayurdhake/firstdemo'
     DOCKER_TAG = "${BUILD_NUMBER}"
