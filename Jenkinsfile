@@ -27,7 +27,7 @@ pipeline {
 
     stage('Docker Build') {
       steps {
-        bat "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+        bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" build -t %DOCKER_IMAGE%:%DOCKER_TAG% .'
         bat "docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest"
       }
     }
