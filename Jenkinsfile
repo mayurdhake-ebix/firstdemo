@@ -16,7 +16,7 @@ pipeline {
 
     stage('Build & Test') {
       steps {
-        bat 'mvn clean test'
+        bat 'C:\\apache-maven-3.9.9\\bin\\mvn.cmd clean test'
       }
       post {
         always {
