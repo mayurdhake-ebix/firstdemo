@@ -3,7 +3,7 @@ pipeline {
   environment {
     DOCKER_IMAGE = 'mayurdhake/firstdemo'
     DOCKER_TAG = "${BUILD_NUMBER}"
-	DOCKER_CREDS = credentials('dockerhub-credentials')
+	DOCKER_CREDS = credentials('dockerhub-creds')
   }
 
   stages {
@@ -35,7 +35,7 @@ pipeline {
     stage('Docker Push') {
       steps {
         withCredentials([usernamePassword(
-            credentialsId: 'dockerhub-credentials',
+            credentialsId: 'dockerhub-creds',
             usernameVariable: 'DOCKER_USER',
             passwordVariable: 'DOCKER_PASS'
         )]){
