@@ -53,7 +53,10 @@ pipeline {
       steps {
         bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" stop springboot-app || exit 0'
         bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" rm springboot-app || exit 0'
+
         bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" run -d -p 9090:8081 --name springboot-app %DOCKER_IMAGE%:latest'
+
+
       }
     }
   }
