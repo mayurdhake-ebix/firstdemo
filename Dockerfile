@@ -23,10 +23,10 @@ FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
 # Copy the JAR from the build stage
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/firstdemo-*.jar app.jar
 
-# Expose port 8080
-EXPOSE 8080
+# Expose port 8081
+EXPOSE 8081
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
